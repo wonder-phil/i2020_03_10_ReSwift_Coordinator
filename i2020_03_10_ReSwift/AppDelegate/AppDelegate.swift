@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<AppState>(
+    reducer: mainReducer,
+    state: nil,
+    middleware: []
+)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    var coordinator: MainCoordinator?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+            let navContoller = UINavigationController()
+            
+            coordinator = MainCoordinator(navigationController: navContoller)
+            coordinator?.start()
+            
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = navContoller
+            window?.makeKeyAndVisible()
+        
+           return true
+       }
 
+
+    /*
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
+ */
 
     // MARK: UISceneSession Lifecycle
 
