@@ -7,7 +7,7 @@ See: https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pat
 
 and
 
-khanlou.com Soroush Khanlou’s blog
+http://khanlou.com Soroush Khanlou’s blog
 
 
 ReSwift is based on:
